@@ -239,6 +239,17 @@ declare namespace $RefParser {
        */
       excludedPathMatcher?(path: string): boolean;
     };
+
+    /**
+     * Callback during the crawl of the document.
+     * @param {*} obj - The value to crawl
+     * @param {string} path - The full path of `obj`, possibly with a JSON Pointer in the hash
+     * @param {$Refs} $refs
+     * @param {$RefParserOptions} options
+     * @param {boolean} external - Whether `obj` was found in an external document.
+     */
+    // eslint-disable-next-line no-unused-vars
+    crawl?(obj, path, $refs, options, external): void;
   }
 
   export interface HTTPResolverOptions extends Partial<ResolverOptions> {
